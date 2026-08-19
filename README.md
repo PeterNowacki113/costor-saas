@@ -4,105 +4,109 @@
 
 <h1 align="center">Costor</h1>
 
-<p align="center"><strong>SaaS for construction cost estimation and business operations.</strong></p>
+<p align="center"><strong>SaaS do wycen, harmonogramów, finansów i obsługi procesów firm remontowo-budowlanych.</strong></p>
 
 <p align="center">
   <a href="https://costor.eu">costor.eu</a>
 </p>
 
-Costor is my original SaaS product for small construction and renovation companies. It connects field data collection, estimating, scheduling, finance and AI-assisted document processing in one operational workflow.
+**English summary:** Costor is my original SaaS product for construction and renovation companies, combining field data collection, estimating, scheduling, finance and AI-assisted document workflows in one operational system.
 
-> This repository is a public product showcase. The production source code, infrastructure configuration and secrets are kept private.
+Costor to mój autorski produkt SaaS dla małych firm remontowo-budowlanych. Łączy zbieranie danych w terenie, wyceny, harmonogramy, finanse i przetwarzanie dokumentów wspomagane przez AI w jednym workflow operacyjnym.
 
-## Product preview
+> To publiczne repozytorium pokazowe. Kod produkcyjny, konfiguracja infrastruktury i sekrety są przechowywane prywatnie.
 
-<p align="center">
-  <img src="https://costor.eu/marketing/costor_1.png" alt="Costor product overview" width="760">
-</p>
-
-### Operational dashboard
-
-The dashboard gives the contractor one place to see estimates, documents, deadlines and the items that require attention.
+## Podgląd produktu
 
 <p align="center">
-  <img src="https://costor.eu/help/dashboard.png" alt="Costor dashboard" width="900">
+  <img src="https://costor.eu/marketing/costor_1.png" alt="Costor — podgląd produktu" width="760">
 </p>
 
-### Estimates
+### Pulpit operacyjny
 
-Costor treats the estimate as the central operational object. Field material can be collected on mobile, processed with AI assistance and then reviewed and finalized on desktop.
+Pulpit daje wykonawcy jedno miejsce do kontroli wycen, dokumentów, terminów i spraw wymagających uwagi.
+
+<p align="center">
+  <img src="https://costor.eu/help/dashboard.png" alt="Pulpit Costor" width="900">
+</p>
+
+### Wyceny
+
+W Costorze wycena jest centralnym obiektem operacyjnym. Materiał może być zebrany w terenie, przetworzony z pomocą AI, a następnie zweryfikowany i dopracowany na desktopie.
 
 <table>
 <tr>
-<td width="50%"><img src="https://costor.eu/help/estimates-list.png" alt="Costor estimates list"></td>
-<td width="50%"><img src="https://costor.eu/help/estimate-detail.png" alt="Costor estimate detail"></td>
+<td width="50%"><img src="https://costor.eu/help/estimates-list.png" alt="Lista wycen Costor"></td>
+<td width="50%"><img src="https://costor.eu/help/estimate-detail.png" alt="Szczegóły wyceny Costor"></td>
 </tr>
 <tr>
-<td align="center"><strong>Estimate workspace</strong></td>
-<td align="center"><strong>Estimate details</strong></td>
+<td align="center"><strong>Lista wycen</strong></td>
+<td align="center"><strong>Szczegóły wyceny</strong></td>
 </tr>
 </table>
 
-### Finance and documents
+### Finanse i dokumenty
 
-The application connects estimates with the financial workflow: sales documents, costs, receivables and payments.
+Aplikacja łączy wyceny z dalszym workflow finansowym: kosztami, dokumentami sprzedażowymi, należnościami i płatnościami.
 
 <table>
 <tr>
-<td width="50%"><img src="https://costor.eu/help/finance-costs.png" alt="Costor costs"></td>
-<td width="50%"><img src="https://costor.eu/help/finance-payments.png" alt="Costor payments"></td>
+<td width="50%"><img src="https://costor.eu/help/finance-costs.png" alt="Koszty w Costor"></td>
+<td width="50%"><img src="https://costor.eu/help/finance-payments.png" alt="Płatności w Costor"></td>
 </tr>
 <tr>
-<td align="center"><strong>Costs</strong></td>
-<td align="center"><strong>Payments</strong></td>
+<td align="center"><strong>Koszty</strong></td>
+<td align="center"><strong>Płatności</strong></td>
 </tr>
 </table>
 
-### Client portal
+### Portal klienta
 
 <p align="center">
-  <img src="https://costor.eu/help/client-portal.png" alt="Costor client portal" width="900">
+  <img src="https://costor.eu/help/client-portal.png" alt="Portal klienta Costor" width="900">
 </p>
 
-## Product idea
+## Idea produktu
 
-Small contractors often work across spreadsheets, messaging apps, paper notes, photos, PDFs and accounting tools. Costor is designed to bring those fragmented workflows into one system built around the estimate as the central business object.
+Małe firmy remontowo-budowlane często pracują jednocześnie na arkuszach, komunikatorach, papierowych notatkach, zdjęciach, PDF-ach i programach księgowych.
 
-The core flow is:
+Costor ma zebrać ten chaos w jeden system oparty o wycenę jako centralny obiekt biznesowy.
 
-`field data → estimate → accepted scope → schedule → financial control → sales documents`
+Główny przepływ:
 
-## Main capabilities
+`dane z terenu → wycena → zaakceptowany zakres → harmonogram → finanse → dokumenty sprzedażowe`
 
-- Construction and renovation estimates
-- Mobile field data collection
-- Room dimensions, photos, descriptions and voice input
-- AI-assisted estimate preparation
-- Price book and pricing validation
-- Work schedules and crew planning
-- Sales and cost tracking
-- Payment and receivables tracking
-- Document processing from photos and PDFs
-- Subscription billing
-- Administrative and operational tooling
-- Health checks, monitoring and deployment workflows
+## Główne możliwości
 
-## Architecture
+- wyceny remontowo-budowlane,
+- mobilne zbieranie danych w terenie,
+- wymiary pomieszczeń, zdjęcia, opisy i notatki głosowe,
+- przygotowanie wyceny wspomagane przez AI,
+- cennik i walidacja cen,
+- harmonogramy prac i planowanie ekip,
+- kontrola sprzedaży i kosztów,
+- należności i płatności,
+- przetwarzanie dokumentów ze zdjęć i PDF,
+- billing abonamentowy,
+- panel administracyjny i operacyjny,
+- health checki, monitoring i workflow wdrożeniowy.
+
+## Architektura
 
 ```mermaid
 flowchart LR
-    USER[Contractor / Office] --> WEB[Next.js Web App]
-    FIELD[Mobile / Field App] --> WEB
-    WEB --> API[NestJS API]
+    USER["Wykonawca / biuro"] --> WEB["Next.js Web App"]
+    FIELD["Mobile / praca w terenie"] --> WEB
+    WEB --> API["NestJS API"]
     API --> DB[(PostgreSQL)]
     API --> REDIS[(Redis)]
-    API --> AI[Python / FastAPI AI Worker]
+    API --> AI["Python / FastAPI AI Worker"]
     WEB --> AI
-    API --> STORAGE[Tenant Storage]
-    OPS[Operations Admin] --> INFRA[Docker / VPS Infrastructure]
+    API --> STORAGE["Tenant Storage"]
+    OPS["Operations Admin"] --> INFRA["Docker / VPS"]
 ```
 
-## Technology stack
+## Stack technologiczny
 
 **Frontend**  
 `Next.js` · `React` · `TypeScript` · `Tailwind CSS`
@@ -110,132 +114,132 @@ flowchart LR
 **Backend**  
 `NestJS` · `TypeScript` · `Prisma` · `PostgreSQL`
 
-**AI layer**  
+**Warstwa AI**  
 `Python` · `FastAPI` · `OpenAI API`
 
-**Infrastructure**  
+**Infrastruktura**  
 `Docker` · `Redis` · `Linux` · `VPS` · `Nginx Proxy Manager`
 
-## AI in Costor
+## AI w Costorze
 
-AI is used as an assisting layer, not as the source of truth for critical calculations.
+AI jest warstwą wspomagającą, a nie źródłem prawdy dla krytycznych obliczeń.
 
-Typical AI tasks include:
+Typowe zadania AI:
 
-- interpreting field notes and voice transcriptions,
-- recognizing work items from collected material,
-- preparing estimate drafts,
-- auditing price-book entries,
-- assisting with schedule generation,
-- processing documents and attachments,
-- supporting operational diagnostics.
+- interpretacja notatek terenowych i transkrypcji głosowych,
+- rozpoznawanie prac na podstawie zebranego materiału,
+- przygotowanie szkicu wyceny,
+- audyt pozycji cennika,
+- wsparcie generowania harmonogramu,
+- przetwarzanie dokumentów i załączników,
+- diagnostyka operacyjna.
 
-Critical quantities, working days, totals and business rules are validated deterministically by the application.
+Krytyczne ilości, dni robocze, sumy i reguły biznesowe są walidowane deterministycznie przez aplikację.
 
-## Estimate-first model
+## Model estimate-first
 
-Costor is built around an **estimate-first** approach.
+Costor jest rozwijany w podejściu **estimate-first**.
 
-Instead of treating estimating, scheduling and finance as unrelated modules, an accepted estimate becomes the basis for later operational steps.
+Wycena, harmonogram i finanse nie są traktowane jako niezależne moduły. Zaakceptowana wycena staje się podstawą kolejnych procesów.
 
 ```text
-Estimate
+Wycena
   ↓
-Accepted scope
+Zaakceptowany zakres
   ↓
-Work schedule
+Harmonogram
   ↓
-Execution
+Realizacja
   ↓
-Costs / payments / documents
+Koszty / płatności / dokumenty
 ```
 
-This makes the system closer to the real workflow of a small construction company than a collection of independent forms.
+Dzięki temu system jest bliższy rzeczywistemu sposobowi pracy małej firmy budowlanej niż zestaw niezależnych formularzy.
 
-## Field workflow
+## Workflow terenowy
 
-The mobile workflow is designed for collecting information directly on site:
+Mobilny workflow służy do szybkiego zebrania informacji bezpośrednio na budowie:
 
-1. Create or open an estimate.
-2. Add rooms / work areas.
-3. Enter base dimensions.
-4. Add photos, descriptions and voice notes.
-5. Set estimate-specific parameters.
-6. Generate an assisted estimate draft.
-7. Review and correct it on desktop.
-8. Accept the final scope.
+1. Utworzenie lub otwarcie wyceny.
+2. Dodanie pomieszczeń / obszarów prac.
+3. Wprowadzenie podstawowych wymiarów.
+4. Dodanie zdjęć, opisów i notatek głosowych.
+5. Ustawienie parametrów konkretnej wyceny.
+6. Wygenerowanie wspomaganego szkicu.
+7. Weryfikacja i korekta na desktopie.
+8. Akceptacja finalnego zakresu.
 
-AI does not guess basic room dimensions without a reliable scale. User-provided measurements remain the primary source for critical dimensions.
+AI nie zgaduje podstawowych wymiarów pomieszczenia bez wiarygodnej skali. Dane podane przez użytkownika pozostają głównym źródłem krytycznych wymiarów.
 
-## Business operations
+## Operacje biznesowe
 
-Costor is not only an estimating calculator. The product also covers operational areas around the estimate, including:
+Costor nie jest tylko kalkulatorem wycen. Obejmuje również procesy wokół wyceny:
 
-- client management,
-- price books,
-- scheduling,
-- costs,
-- receivables,
-- partial payments,
-- sales documents,
-- subscription access,
-- administrative diagnostics.
+- klientów,
+- cenniki,
+- harmonogramy,
+- koszty,
+- należności,
+- płatności częściowe,
+- dokumenty sprzedażowe,
+- dostęp abonamentowy,
+- diagnostykę administracyjną.
 
-## Product infrastructure
+## Infrastruktura produktu
 
-The production system is containerized and runs on VPS infrastructure.
+System produkcyjny działa kontenerowo na VPS.
 
-The architecture includes:
+Architektura obejmuje m.in.:
 
-- isolated application services,
+- odseparowane usługi aplikacyjne,
 - PostgreSQL,
 - Redis,
-- tenant storage,
-- AI worker,
+- storage tenantów,
+- AI workera,
 - reverse proxy,
-- health checks,
+- health checki,
 - monitoring,
-- post-deployment smoke tests,
-- separate non-production environment for validation.
+- smoke testy po wdrożeniu,
+- osobne środowisko nieprodukcyjne do walidacji zmian.
 
-Production implementation details and credentials are intentionally not published in this showcase repository.
+Szczegóły produkcyjnej infrastruktury i dane dostępowe nie są publikowane w tym repozytorium.
 
-## Design principles
+## Zasady projektowe
 
-**Business process first**  
-The application follows the contractor's workflow instead of forcing the user into generic software patterns.
+**Najpierw proces biznesowy**  
+Aplikacja ma odwzorowywać sposób pracy wykonawcy zamiast zmuszać go do generycznego workflow.
 
-**AI assists, software validates**  
-AI may interpret or propose. Critical calculations and state transitions are validated by application logic.
+**AI wspomaga, software waliduje**  
+AI może interpretować i proponować. Krytyczne obliczenia i przejścia stanów kontroluje logika aplikacji.
 
-**One source of operational data**  
-The estimate connects later scheduling and financial processes.
+**Jedno źródło danych operacyjnych**  
+Wycena łączy późniejsze procesy harmonogramu i finansów.
 
-**Mobile data collection, desktop control**  
-The field workflow is optimized for quick collection, while detailed verification remains available in the main application.
+**Mobile do zbierania danych, desktop do kontroli**  
+W terenie liczy się szybkość, natomiast szczegółowa weryfikacja pozostaje dostępna w głównej aplikacji.
 
-**Deployable and observable**  
-Monitoring, health checks and deployment procedures are treated as part of the product, not as an afterthought.
+**System musi być obserwowalny i wdrażalny**  
+Monitoring, health checki i procedury deploymentu są traktowane jako część produktu.
 
-## Product status
+## Status produktu
 
-Costor is an actively developed product.
+Costor jest aktywnie rozwijanym produktem.
 
-The private production repository contains the application code, infrastructure definitions, deployment procedures and operational documentation. This public repository exists to present the product architecture, engineering approach and selected capabilities without exposing production-sensitive material.
+Prywatne repozytorium produkcyjne zawiera kod aplikacji, definicje infrastruktury, procedury wdrożeniowe i dokumentację operacyjną. To publiczne repo pokazuje produkt, architekturę i podejście inżynierskie bez ujawniania wrażliwych elementów produkcji.
 
-## About the author
+## Autor
 
-Costor is designed and developed by **Piotr Nowacki / SoftCode**.
+Costor został zaprojektowany i jest rozwijany przez **Piotra Nowackiego / SoftCode**.
 
-I build custom business systems, SaaS products and AI-assisted operational software.
+Tworzę dedykowane systemy biznesowe, produkty SaaS i oprogramowanie wspomagane przez AI.
 
-**Website:** [softcode-ai.pl](https://softcode-ai.pl)  
-**Product:** [costor.eu](https://costor.eu)
+**Strona:** [softcode-ai.pl](https://softcode-ai.pl)  
+**Produkt:** [costor.eu](https://costor.eu)
 
 ---
 
-### Repository scope
+### Zakres repozytorium
 
-This is a **showcase repository**, not the production source repository.
+To jest **repozytorium showcase**, a nie repozytorium kodu produkcyjnego.
 
-No client data, production credentials, API secrets or private infrastructure configuration are published here.
+Nie publikuję tutaj danych klientów, sekretów, kluczy API ani prywatnej konfiguracji infrastruktury.
